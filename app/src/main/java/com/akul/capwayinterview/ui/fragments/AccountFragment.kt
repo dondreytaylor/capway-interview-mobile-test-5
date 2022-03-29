@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.akul.capwayinterview.R
 import com.akul.capwayinterview.models.MainViewModel
 import com.akul.capwayinterview.databinding.AccountFragmentBinding
 import com.akul.capwayinterview.models.Transaction
@@ -66,7 +67,7 @@ class AccountFragment : Fragment() {
             Transaction(
                 "Domino's",
                 LocalDateTime.of(2022, 2, 13, 15, 15),
-                null,
+                R.drawable.transaction_card_category,
                 "-$2.00",
                 false
             )
@@ -75,7 +76,7 @@ class AccountFragment : Fragment() {
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 2, 12, 15, 15),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $3.52",
                 true
             )
@@ -84,7 +85,7 @@ class AccountFragment : Fragment() {
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 2, 11, 15, 15),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $3.00",
                 true
             )
@@ -93,7 +94,7 @@ class AccountFragment : Fragment() {
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 2, 9, 15, 15),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $25.00",
                 true
             )
@@ -102,7 +103,7 @@ class AccountFragment : Fragment() {
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 2, 3, 15, 15),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $100.00",
                 true
             )
@@ -111,43 +112,43 @@ class AccountFragment : Fragment() {
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 1, 31, 15, 15),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $3.00",
-                true
+                false
             )
         )
         transactions.add(
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 1, 30, 15, 15),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $33.00",
-                true
+                false
             )
         )
         transactions.add(
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 1, 29, 15, 15),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $43.00",
-                true
+                false
             )
         )
         transactions.add(
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 1, 28, 15, 15),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $4.00",
-                true
+                false
             )
         )
         transactions.add(
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 1, 27, 15, 15),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $66.00",
                 true
             )
@@ -156,7 +157,7 @@ class AccountFragment : Fragment() {
             Transaction(
                 "American Airlines",
                 LocalDateTime.of(2022, 1, 21, 19, 10),
-                null,
+                R.drawable.transaction_card_category,
                 "- $1111.00",
                 true
             )
@@ -165,7 +166,7 @@ class AccountFragment : Fragment() {
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 1, 20, 16, 44),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $66.00",
                 true
             )
@@ -174,7 +175,7 @@ class AccountFragment : Fragment() {
             Transaction(
                 "Kroger",
                 LocalDateTime.of(2022, 1, 19, 15, 0),
-                null,
+                R.drawable.transaction_card_category,
                 "- $3.00",
                 true
             )
@@ -183,7 +184,7 @@ class AccountFragment : Fragment() {
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 1, 18, 15, 15),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $11.00",
                 true
             )
@@ -192,7 +193,7 @@ class AccountFragment : Fragment() {
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 1, 17, 15, 15),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $456.00",
                 true
             )
@@ -201,7 +202,7 @@ class AccountFragment : Fragment() {
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 1, 16, 15, 15),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $9.00",
                 true
             )
@@ -210,7 +211,7 @@ class AccountFragment : Fragment() {
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 1, 15, 15, 15),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $98.00",
                 true
             )
@@ -219,7 +220,7 @@ class AccountFragment : Fragment() {
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 1, 14, 15, 15),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $99.00",
                 true
             )
@@ -228,7 +229,7 @@ class AccountFragment : Fragment() {
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 1, 13, 15, 15),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $101.00",
                 true
             )
@@ -237,7 +238,7 @@ class AccountFragment : Fragment() {
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 1, 11, 2, 15),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $124.00",
                 true
             )
@@ -246,9 +247,9 @@ class AccountFragment : Fragment() {
             Transaction(
                 "Deposit from bank",
                 LocalDateTime.of(2022, 1, 10, 15, 15),
-                null,
+                R.drawable.transaction_bank_category,
                 "+ $232.00",
-                true
+                false
             )
         )
         return transactions.toTypedArray()

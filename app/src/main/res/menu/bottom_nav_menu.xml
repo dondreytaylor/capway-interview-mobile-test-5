@@ -2,17 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/account"
+        android:icon="@drawable/account_button"
         android:title="@string/tab_bar_account"/>
     <item
         android:id="@+id/send"
+        android:icon="@drawable/send_button"
         android:title="@string/tab_bar_send"/>
     <item
         android:id="@+id/placeholder"
-        android:text=""/>
+        android:title=""/>
     <item
         android:id="@+id/learn"
+        android:icon="@drawable/learn_button"
         android:title="@string/tab_bar_learn"/>
     <item
         android:id="@+id/phunds"
+        android:icon="@drawable/phunds_button"
         android:title="@string/tab_bar_phunds"/>
 </menu>

@@ -33,7 +33,6 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 app:cardCornerRadius="25dp"
-                android:paddingRight="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBaseline_toBaselineOf="parent">
                 <ImageView
@@ -190,6 +189,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/search_bar"
             app:layout_constraintStart_toStartOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

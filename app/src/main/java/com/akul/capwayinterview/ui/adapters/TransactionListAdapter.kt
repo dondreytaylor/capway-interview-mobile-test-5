@@ -5,8 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.akul.capwayinterview.databinding.TransactionRowBinding
+import com.akul.capwayinterview.models.Transaction
 
-class TransactionListAdapter(private val dataSet: Array<String>):
+class TransactionListAdapter(private val dataSet: Array<Transaction>):
     RecyclerView.Adapter<TransactionListAdapter.ViewHolder>() {
     inner class ViewHolder(val binding: TransactionRowBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -62,11 +63,11 @@ class TransactionListAdapter(private val dataSet: Array<String>):
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
             with(dataSet[position]) {
-                binding.icon.imageDrawable(this.icon)
-                binding.amount = this.amount
-                binding.date = this.date.toString()
-                binding.pendingTransaction.visibility = this.pending
-                binding.vendorName = this.vendorName
+//                binding.icon.setImageIcon(getResources(this.icon))
+                binding.amount.text = this.amount
+                binding.date.text = this.dateTime.toString()
+                binding.vendorName.text = this.vendorName
+                binding.pendingTransaction.visibility = if (this.pending) View.VISIBLE else View.GONE
             }
         }
     }

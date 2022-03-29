@@ -9,7 +9,29 @@
         android:id="@+id/mainFragment"
         android:name="com.akul.capwayinterview.ui.main.AccountFragment"
         android:label="main_fragment"
-        tools:layout="@layout/account_fragment" />
+        tools:layout="@layout/account_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_sendFragment"
+            app:destination="@id/sendFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_learnFragment"
+            app:destination="@id/learnFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_learnFragment2"
+            app:destination="@id/learnFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_activityFragment"
+            app:destination="@id/activityFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_moneyGoalsFragment"
+            app:destination="@id/moneyGoalsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_phundsFragment"
+            app:destination="@id/phundsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_statementsFragment"
+            app:destination="@id/statementsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/sendFragment"
         android:name="com.akul.capwayinterview.SendFragment"

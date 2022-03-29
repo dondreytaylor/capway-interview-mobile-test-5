@@ -5,9 +5,11 @@
       <map>
         <entry key="app/src/main/res/drawable/account_button.xml" value="0.2015" />
         <entry key="app/src/main/res/drawable/learn_button.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/more_button.xml" value="0.2015" />
         <entry key="app/src/main/res/drawable/phunds_button.xml" value="0.2015" />
         <entry key="app/src/main/res/drawable/send_button.xml" value="0.2015" />
         <entry key="app/src/main/res/layout/account_fragment.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/app_bar.xml" value="0.2234375" />
         <entry key="app/src/main/res/layout/main_activity.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/main_fragment.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/transaction_row.xml" value="0.15260416666666668" />

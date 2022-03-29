@@ -26,7 +26,7 @@ class AccountFragment : Fragment() {
 
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: AccountFragmentBinding
-    private val navController = findNavController()
+//    private var navController = findNavController()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +34,7 @@ class AccountFragment : Fragment() {
     ): View {
         binding = AccountFragmentBinding.inflate(inflater, container, false)
         //any programmatic setup done here
-        setupClickListeners(binding, navController)
+        setupClickListeners(binding, findNavController())
         val adapter = TransactionListAdapter(populateTransactionData())
         binding.transactionsList.adapter = adapter
         return binding.root

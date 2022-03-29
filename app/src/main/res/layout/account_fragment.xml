@@ -7,52 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.AccountFragment">
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/app_bar_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/app_bar"
-                android:text="@string/account_fragment_header"
-                android:textColor="@color/capway_text_dark_gray"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-            <androidx.cardview.widget.CardView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:cardCornerRadius="25dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBaseline_toBaselineOf="parent">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minHeight="32dp"
-                    android:minWidth="32dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:contentDescription="@string/account_fragment_header" />
-            </androidx.cardview.widget.CardView>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.appbar.AppBarLayout>
 
         <HorizontalScrollView
             android:id="@+id/horizontal_scroll_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/app_bar_layout">
+            app:layout_constraintTop_toTopOf="parent">
             <com.google.android.material.chip.ChipGroup
                 android:layout_marginHorizontal="8dp"
                 android:layout_width="wrap_content"
@@ -84,6 +48,8 @@
             android:id="@+id/account_balance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/horizontal_scroll_view"
             android:text="@string/account_balance_example"/>
@@ -93,12 +59,15 @@
             android:layout_height="wrap_content"
             android:labelFor="@id/account_balance"
             android:text="@string/account_balance"
+            android:textColor="@color/capway_text_gray"
+            android:paddingBottom="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/account_balance"/>
         <TextView
             android:id="@+id/pending_charge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/capway_text_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/account_balance_label"
             android:text="@string/pending_charge_example"/>
@@ -108,12 +77,15 @@
             android:layout_height="wrap_content"
             android:labelFor="@id/pending_charge"
             android:text="@string/pending_charges"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/account_balance_label"/>
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/pending_charge"/>
         <TextView
@@ -123,12 +95,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider"
             android:text="@string/card_label"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:labelFor="@id/card"
             />
         <ImageView
             android:id="@+id/card"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/capway_debit_card"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card_label"/>
         <TextView
@@ -136,6 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/card_active_label"
+            android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="@id/card"
             app:layout_constraintStart_toEndOf="@+id/card"/>
         <Button
@@ -216,7 +192,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:src="@drawable/tab_bar_more_active"
+        android:src="@drawable/more_button"
         app:fabSize="normal"
         app:layout_anchor="@id/bottomAppBar"
         android:contentDescription="@string/tab_bar_more" />

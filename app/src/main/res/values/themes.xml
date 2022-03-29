@@ -14,11 +14,16 @@
         <item name="android:navigationBarColor">@color/white</item>
         <!-- Customize your theme here. -->
         <item name="chipStyle">@style/Widget.App.Chip</item>
+        <item name="tabStyle">@style/Widget.App.TabLayout</item>
     </style>
 
     <style name="Widget.App.Chip" parent="Widget.MaterialComponents.Chip.Action">
         <item name="chipBackgroundColor">@color/chip_background_color</item>
         <item name="android:textColor">@color/chip_text_color</item>
+    </style>
+
+    <style name="Widget.App.TabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="colorPrimary">@color/chip_text_color</item>
     </style>
 
 </resources>

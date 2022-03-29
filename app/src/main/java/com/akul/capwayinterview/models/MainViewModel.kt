@@ -1,4 +1,4 @@
-package com.akul.capwayinterview.ui.main
+package com.akul.capwayinterview.models
 
 import androidx.lifecycle.ViewModel
 

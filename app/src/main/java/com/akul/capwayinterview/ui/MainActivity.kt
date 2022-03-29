@@ -1,9 +1,10 @@
-package com.akul.capwayinterview
+package com.akul.capwayinterview.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
-import com.akul.capwayinterview.ui.main.AccountFragment
+import com.akul.capwayinterview.R
+import com.akul.capwayinterview.ui.fragments.AccountFragment
 
 class MainActivity : AppCompatActivity() {
 

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.akul.capwayinterview.ui.main.AccountFragment"
+        android:name="com.akul.capwayinterview.ui.fragments.AccountFragment"
         android:label="main_fragment"
         tools:layout="@layout/account_fragment" >
         <action

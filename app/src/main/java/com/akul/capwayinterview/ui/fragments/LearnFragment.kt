@@ -1,4 +1,4 @@
-package com.akul.capwayinterview.ui.main
+package com.akul.capwayinterview.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

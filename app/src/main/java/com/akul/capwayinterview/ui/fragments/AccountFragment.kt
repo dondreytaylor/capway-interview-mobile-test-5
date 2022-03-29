@@ -32,6 +32,7 @@ class AccountFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = AccountFragmentBinding.inflate(inflater, container, false)
+        //any programmatic setup done here
         setupClickListeners(binding, navController)
         val adapter = TransactionListAdapter(populateTransactionData())
         binding.transactionsList.adapter = adapter

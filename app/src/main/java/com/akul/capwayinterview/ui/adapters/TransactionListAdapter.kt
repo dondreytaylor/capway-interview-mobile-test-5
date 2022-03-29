@@ -1,26 +1,14 @@
 package com.akul.capwayinterview.ui.adapters
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.akul.capwayinterview.databinding.AccountFragmentBinding
+import com.akul.capwayinterview.databinding.TransactionRowBinding
 
 class TransactionListAdapter(private val dataSet: Array<String>):
     RecyclerView.Adapter<TransactionListAdapter.ViewHolder>() {
-    class ViewHolder(v: View): RecyclerView.ViewHolder(v) {
-        val vendorName: TextView
-        val dateTime: TextView
-        val icon: ImageView
-        val amount: TextView
-        init {
-            vendorName = fds
-            dateTime = fds
-            icon = fds
-            amount = fds
-        }
-    }
+    inner class ViewHolder(val binding: TransactionRowBinding) : RecyclerView.ViewHolder(binding.root)
 
     /**
      * Called when RecyclerView needs a new [ViewHolder] of the given type to represent
@@ -46,7 +34,8 @@ class TransactionListAdapter(private val dataSet: Array<String>):
      * @see .onBindViewHolder
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        TODO("Not yet implemented")
+        val binding = TransactionRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
     }
 
     /**
@@ -71,7 +60,15 @@ class TransactionListAdapter(private val dataSet: Array<String>):
      * @param position The position of the item within the adapter's data set.
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        AccountFragmentBinding.inflate()
+        with(holder) {
+            with(dataSet[position]) {
+                binding.icon.imageDrawable(this.icon)
+                binding.amount = this.amount
+                binding.date = this.date.toString()
+                binding.pendingTransaction.visibility = this.pending
+                binding.vendorName = this.vendorName
+            }
+        }
     }
 
     /**

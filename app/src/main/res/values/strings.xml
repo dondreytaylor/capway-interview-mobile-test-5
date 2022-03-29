@@ -24,4 +24,5 @@
     <string name="middle_tab_view_deposits">Deposits</string>
     <string name="middle_tab_view_withdrawals">Withdrawals</string>
     <string name="search_hint">Search</string>
+    <string name="pending_transaction_label">Pending</string>
 </resources>

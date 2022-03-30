@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/accountFragment">
+
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.akul.capwayinterview.ui.fragments.AccountFragment"
+        tools:layout="@layout/account_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_sendFragment"
+            app:destination="@id/sendFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_learnFragment"
+            app:destination="@id/learnFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_learnFragment2"
+            app:destination="@id/learnFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_activityFragment"
+            app:destination="@id/activityFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_moneyGoalsFragment"
+            app:destination="@id/moneyGoalsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_phundsFragment"
+            app:destination="@id/phundsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_statementsFragment"
+            app:destination="@id/statementsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendFragment"
+        android:name="com.akul.capwayinterview.ui.fragments.SendFragment"
+        android:label="fragment_send"
+        tools:layout="@layout/fragment_send" />
+    <fragment
+        android:id="@+id/learnFragment"
+        android:name="com.akul.capwayinterview.ui.fragments.LearnFragment"
+        android:label="fragment_learn"
+        tools:layout="@layout/fragment_learn" />
+    <fragment
+        android:id="@+id/phundsFragment"
+        android:name="com.akul.capwayinterview.ui.fragments.PhundsFragment"
+        android:label="fragment_phunds"
+        tools:layout="@layout/fragment_phunds" />
+    <fragment
+        android:id="@+id/moneyGoalsFragment"
+        android:name="com.akul.capwayinterview.ui.fragments.MoneyGoalsFragment"
+        android:label="fragment_money_goals"
+        tools:layout="@layout/fragment_money_goals" />
+    <fragment
+        android:id="@+id/activityFragment"
+        android:name="com.akul.capwayinterview.ui.fragments.ActivityFragment"
+        android:label="fragment_activity"
+        tools:layout="@layout/fragment_activity" />
+    <fragment
+        android:id="@+id/statementsFragment"
+        android:name="com.akul.capwayinterview.ui.fragments.StatementsFragment"
+        android:label="fragment_statements"
+        tools:layout="@layout/fragment_statements" />
+</navigation>

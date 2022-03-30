@@ -8,7 +8,6 @@
     <fragment
         android:id="@+id/accountFragment"
         android:name="com.akul.capwayinterview.ui.fragments.AccountFragment"
-        android:label="main_fragment"
         tools:layout="@layout/account_fragment" >
         <action
             android:id="@+id/action_mainFragment_to_sendFragment"

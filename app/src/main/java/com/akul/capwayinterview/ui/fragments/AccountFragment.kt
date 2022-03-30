@@ -7,16 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.Navigation
+import androidx.navigation.ui.AppBarConfiguration
 import com.akul.capwayinterview.R
 import com.akul.capwayinterview.models.MainViewModel
 import com.akul.capwayinterview.databinding.AccountFragmentBinding
 import com.akul.capwayinterview.models.Transaction
 import com.akul.capwayinterview.ui.adapters.TransactionListAdapter
 import java.time.LocalDateTime
-import java.time.Month
-import java.util.*
-import java.util.Calendar.MONTH
 
 class AccountFragment : Fragment() {
 
@@ -25,19 +23,33 @@ class AccountFragment : Fragment() {
     }
 
     private lateinit var viewModel: MainViewModel
-    private lateinit var binding: AccountFragmentBinding
-//    private var navController = findNavController()
+    private var _binding: AccountFragmentBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = AccountFragmentBinding.inflate(inflater, container, false)
+        _binding = AccountFragmentBinding.inflate(inflater, container, false)
         //any programmatic setup done here
-        setupClickListeners(binding, findNavController())
         val adapter = TransactionListAdapter(populateTransactionData())
         binding.transactionsList.adapter = adapter
+        binding.appBarElement.appBar.setTitle(R.string.account_fragment_header)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val appBarConfiguration = AppBarConfiguration(setOf(
+            R.id.accountFragment,
+            R.id.activityFragment,
+            R.id.learnFragment,
+            R.id.moneyGoalsFragment,
+            R.id.phundsFragment,
+            R.id.sendFragment,
+            R.id.statementsFragment
+        ))
+        val navController = activity?.let { Navigation.findNavController(it, R.id.nav_host_fragment) }
+        setupClickListeners(binding, navController)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -46,18 +58,18 @@ class AccountFragment : Fragment() {
         // TODO: Use the ViewModel
     }
 
-    private fun setupClickListeners(binding: AccountFragmentBinding, navController: NavController) {
+    private fun setupClickListeners(binding: AccountFragmentBinding, navController: NavController?) {
         binding.tabMenuStatementsButton.setOnClickListener {
             val action = AccountFragmentDirections.actionMainFragmentToStatementsFragment()
-            navController.navigate(action)
+            navController?.navigate(action)
         }
         binding.tabMenuActivityButton.setOnClickListener {
             val action = AccountFragmentDirections.actionMainFragmentToActivityFragment()
-            navController.navigate(action)
+            navController?.navigate(action)
         }
         binding.tabMenuMoneygoalsButton.setOnClickListener {
             val action = AccountFragmentDirections.actionMainFragmentToMoneyGoalsFragment()
-            navController.navigate(action)
+            navController?.navigate(action)
         }
     }
 

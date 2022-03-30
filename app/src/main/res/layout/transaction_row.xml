@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <ImageView
@@ -14,6 +15,8 @@
         android:id="@+id/vendor_name"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:padding="5dp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@id/icon"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Domino's"/>
@@ -21,6 +24,7 @@
         android:id="@+id/date"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:padding="5dp"
         app:layout_constraintStart_toEndOf="@id/icon"
         app:layout_constraintTop_toBottomOf="@id/vendor_name"
         tools:text="12/31/2021 at 07:35 PM"/>
@@ -28,6 +32,8 @@
         android:id="@+id/amount"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:padding="5dp"
+        android:textColor="@color/capway_text_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="-$2.00"/>
@@ -36,8 +42,15 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="@string/pending_transaction_label"
+        android:textColor="@color/capway_text_gray"
+        android:padding="5dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/amount"/>
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

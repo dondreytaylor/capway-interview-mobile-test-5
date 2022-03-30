@@ -35,7 +35,8 @@ class TransactionListAdapter(private val dataSet: Array<Transaction>):
      * @see .onBindViewHolder
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = TransactionRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            TransactionRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
@@ -63,7 +64,7 @@ class TransactionListAdapter(private val dataSet: Array<Transaction>):
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
             with(dataSet[position]) {
-//                binding.icon.setImageIcon(getResources(this.icon))
+                binding.icon.setImageResource(this.icon)
                 binding.amount.text = this.amount
                 binding.date.text = this.dateTime.toString()
                 binding.vendorName.text = this.vendorName

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -21,7 +22,6 @@
             android:padding="@dimen/appbar_padding"
             android:text="@string/app_name"
             android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -45,6 +45,87 @@
             app:layout_constraintTop_toBottomOf="@id/tabs"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:scrollbars="none">
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                app:chipSpacing="8dp"
+                app:singleLine="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Transactions"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Money Goals"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Activity"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Statements"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Reconciling"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Budgeting"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Monthly Planning"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="HardcodedText" />
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -1,4 +1,4 @@
-package app.capway.designchallenge.ui.main
+package app.capway.designchallenge.view.account
 
 import android.content.Context
 import androidx.fragment.app.Fragment

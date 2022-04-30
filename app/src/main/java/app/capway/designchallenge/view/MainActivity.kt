@@ -1,15 +1,13 @@
-package app.capway.designchallenge
+package app.capway.designchallenge.view
 
+import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
+import android.view.View
 import com.google.android.material.tabs.TabLayout
 import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
-import app.capway.designchallenge.ui.main.SectionsPagerAdapter
 import app.capway.designchallenge.databinding.ActivityMainBinding
+import app.capway.designchallenge.view.account.SectionsPagerAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,5 +24,11 @@ class MainActivity : AppCompatActivity() {
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = binding.tabs
         tabs.setupWithViewPager(viewPager)
+    }
+    /** Called when the user touches the button */
+    fun gotoNextPage(view: View) {
+        // Do something in response to button click
+        val intent = Intent(this, BlankActivity::class.java)
+        startActivity(intent)
     }
 }

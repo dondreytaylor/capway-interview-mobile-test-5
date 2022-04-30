@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/app_bar"
         android:theme="@style/Theme.DesignChallenge.AppBarOverlay">
 
         <TextView
@@ -29,30 +28,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
-            app:layout_anchor="@+id/constraintLayout2"
-            app:layout_anchorGravity="center"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/tabs"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:scrollbars="none"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:scrollbars="none">
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.chip.ChipGroup
                 android:layout_width="wrap_content"
@@ -68,65 +50,210 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="Transactions"
+                    android:textColor="@color/white"
+                    app:chipBackgroundColor="@color/capWay_blue"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="HardcodedText" />
+                    tools:ignore="HardcodedText,UsingOnClickInXml" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:onClick="gotoNextPage"
                     android:text="Money Goals"
+                    app:chipBackgroundColor="@color/white"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="HardcodedText" />
+                    tools:ignore="HardcodedText,UsingOnClickInXml" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:onClick="gotoNextPage"
                     android:text="Activity"
+                    app:chipBackgroundColor="@color/white"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="HardcodedText" />
+                    tools:ignore="HardcodedText,UsingOnClickInXml" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:onClick="gotoNextPage"
                     android:text="Statements"
+                    app:chipBackgroundColor="@color/white"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="HardcodedText" />
+                    tools:ignore="HardcodedText,UsingOnClickInXml" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:onClick="gotoNextPage"
                     android:text="Reconciling"
+                    app:chipBackgroundColor="@color/white"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="HardcodedText" />
+                    tools:ignore="HardcodedText,UsingOnClickInXml" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:onClick="gotoNextPage"
                     android:text="Budgeting"
+                    app:chipBackgroundColor="@color/white"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="HardcodedText" />
+                    tools:ignore="HardcodedText,UsingOnClickInXml" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:onClick="gotoNextPage"
                     android:text="Monthly Planning"
+                    app:chipBackgroundColor="@color/white"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="HardcodedText" />
+                    tools:ignore="HardcodedText,UsingOnClickInXml" />
             </com.google.android.material.chip.ChipGroup>
         </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="130dp"
+            android:alpha="0.9"
+            android:text="$255.73"
+            android:textColor="@color/capWay_black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/text_account_balance_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="170dp"
+            android:alpha=".9"
+            android:text="Account Balance"
+            android:textColor="@color/capWay_gray"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/text_pending_charges_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="215dp"
+            android:alpha="0.9"
+            android:text="Pending Charges"
+            android:textColor="@color/capWay_black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/text_pending_charges_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="215dp"
+            android:layout_marginEnd="27dp"
+            android:alpha="0.7"
+            android:text="$0.0"
+            android:textColor="@color/capWay_gray"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <View
+            android:id="@+id/line_divider"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="245dp"
+            android:layout_marginRight="27dp"
+            android:alpha="0.1"
+            android:background="#E91E63"
+            android:paddingLeft="27dp"
+            android:paddingRight="27dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="263dp"
+            android:alpha="0.9"
+            android:text="CapWay Card"
+            android:textColor="@color/capWay_black"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:id="@+id/image_credit_card"
+            android:layout_width="179dp"
+            android:layout_height="129dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="285dp"
+            android:alpha="0.9"
+            android:src="@drawable/img_debit_card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="27dp"
+            app:layout_constraintStart_toEndOf="@id/image_credit_card"
+            app:layout_constraintTop_toTopOf="@id/image_credit_card"
+            android:alpha="0.9"
+            android:text="Card 2281 is inactive"
+            android:textColor="@color/capWay_black"
+            android:textSize="17sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="57dp"
+            app:layout_constraintStart_toEndOf="@id/image_credit_card"
+            app:layout_constraintTop_toTopOf="@id/image_credit_card"
+            android:alpha="0.9"
+            android:text="Virtual Card &#x2022; Add Funds"
+            android:textColor="@color/capWay_blue"
+            android:textSize="17sp"
+            tools:ignore="HardcodedText" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="424dp"
+            app:layout_anchor="@+id/constraintLayout2"
+            app:layout_anchorGravity="center"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tabs" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

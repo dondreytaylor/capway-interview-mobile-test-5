@@ -8,9 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="capWay_blue">#50B0DB</color>
-    <color name="capWay_gray">#BBBBBB</color>
-    <color name="capWay_green"></color>
     <color name="capWay_black">#FF000000</color>
+    <color name="capWay_blue">#50B0DB</color>
+    <color name="capWay_red">#F28C8B</color>
+    <color name="capWay_gray">#BBBBBB</color>
+    <color name="capWay_green">#7FE1A4</color>
     <color name="capWay_white">#FFFFFFFF</color>
 </resources>

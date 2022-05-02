@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import app.capway.designchallenge.R
+import app.capway.designchallenge.model.Transaction
 
 private val TAB_TITLES = arrayOf(
     R.string.tab_text_1,
@@ -20,17 +21,123 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
     FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1)
+        val af = AccountListFragment.newInstance(getTransactions())
+        return when (position) {
+            0 -> AccountListFragment.newInstance(getTransactions())
+            1 -> AccountListFragment.newInstance(getDeposits())
+            2 -> AccountListFragment.newInstance(getWithdrawals())
+            else -> AccountListFragment.newInstance(getTransactions())
+        }
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
+    override fun getPageTitle(position: Int): CharSequence {
         return context.resources.getString(TAB_TITLES[position])
     }
 
     override fun getCount(): Int {
         // Show 2 total pages.
         return 3
+    }
+
+    private fun getWithdrawals(): ArrayList<Transaction> {
+        val resultReturn: ArrayList<Transaction> = arrayListOf()
+        resultReturn.add(
+            Transaction(R.drawable.ic_bank, "Withdrawal from bank",
+                "$100.00", "12/15/2021 at 6:10PM",
+                true, isDeposit = true)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_bank, "Withdrawal from bank ATM",
+                "$50.00", "11/17/2021 at 10:50PM",
+                true, isDeposit = true)
+        )
+        return resultReturn
+    }
+
+    private fun getDeposits() : ArrayList<Transaction> {
+        val resultReturn: ArrayList<Transaction> = arrayListOf()
+        resultReturn.add(
+            Transaction(R.drawable.ic_bank, "Deposit from bank",
+                "$100.00", "12/15/2021 at 6:10PM", true, isDeposit = true)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_bank, "Deposit from bank",
+                "$50.00", "11/17/2021 at 10:50PM", true, isDeposit = true)
+        )
+        return resultReturn
+    }
+
+    private fun getTransactions(): ArrayList<Transaction>  {
+        val resultReturn: ArrayList<Transaction> = arrayListOf()
+
+        resultReturn.add(
+            Transaction(R.drawable.ic_money, "Domino's",
+            "$7.00", "12/17/2021 at 5:30PM", false, isDeposit = false)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_bank, "Deposit from bank",
+            "$100.00", "12/15/2021 at 6:10PM", true, isDeposit = true)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_bank, "Deposit from bank",
+            "$50.00", "11/17/2021 at 10:50PM", true, isDeposit = true)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_bank, "Deposit from bank",
+            "$25.00", "11/15/2021 at 1:47PM", true, isDeposit = true)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_money, "Domino's",
+                "$7.00", "10/17/2021 at 5:30PM", false, isDeposit = false)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_bank, "Deposit from bank",
+                "$25.00", "12/08/2021 at 1:47PM", true, isDeposit = true)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_bank, "Deposit from bank",
+                "$25.00", "3/07/2021 at 1:47PM", true, isDeposit = true)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_bank, "Deposit from bank",
+                "$50.00", "11/17/2021 at 10:50PM", true, isDeposit = true)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_bank, "Deposit from bank",
+                "$25.00", "11/15/2021 at 1:47PM", true, isDeposit = true)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_money, "Domino's",
+                "$7.00", "10/17/2021 at 5:30PM", false, isDeposit = false)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_bank, "Deposit from bank",
+                "$25.00", "12/08/2021 at 1:47PM", true, isDeposit = true)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_bank, "Deposit from bank",
+                "$25.00", "3/07/2021 at 1:47PM", true, isDeposit = true)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_bank, "Deposit from bank",
+                "$50.00", "11/17/2021 at 10:50PM", true, isDeposit = true)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_bank, "Deposit from bank",
+                "$25.00", "11/15/2021 at 1:47PM", true, isDeposit = true)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_money, "Domino's",
+                "$7.00", "10/17/2021 at 5:30PM", false, isDeposit = false)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_bank, "Deposit from bank",
+                "$25.00", "12/08/2021 at 1:47PM", true, isDeposit = true)
+        )
+        resultReturn.add(
+            Transaction(R.drawable.ic_bank, "Deposit from bank",
+                "$25.00", "3/07/2021 at 1:47PM", true, isDeposit = true)
+        )
+        return resultReturn
     }
 }

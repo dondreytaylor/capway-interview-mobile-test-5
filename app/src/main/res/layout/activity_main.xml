@@ -120,7 +120,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="27dp"
+            android:layout_marginStart="@dimen/account_activity_horz_margin"
             android:layout_marginTop="130dp"
             android:alpha="0.9"
             android:text="$255.73"
@@ -135,7 +135,7 @@
             android:id="@+id/text_account_balance_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="27dp"
+            android:layout_marginStart="@dimen/account_activity_horz_margin"
             android:layout_marginTop="170dp"
             android:alpha=".9"
             android:text="Account Balance"
@@ -149,8 +149,8 @@
             android:id="@+id/text_pending_charges_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="27dp"
-            android:layout_marginTop="215dp"
+            android:layout_marginStart="@dimen/account_activity_horz_margin"
+            android:layout_marginTop="210dp"
             android:alpha="0.9"
             android:text="Pending Charges"
             android:textColor="@color/capWay_black"
@@ -164,9 +164,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="215dp"
-            android:layout_marginEnd="27dp"
+            android:layout_marginEnd="@dimen/account_activity_horz_margin"
             android:alpha="0.7"
-            android:text="$0.0"
+            android:text="$100.00"
             android:textColor="@color/capWay_gray"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -177,13 +177,13 @@
             android:id="@+id/line_divider"
             android:layout_width="wrap_content"
             android:layout_height="1dp"
-            android:layout_marginLeft="27dp"
+            android:layout_marginLeft="@dimen/account_activity_horz_margin"
             android:layout_marginTop="245dp"
-            android:layout_marginRight="27dp"
+            android:layout_marginRight="@dimen/account_activity_horz_margin"
             android:alpha="0.1"
-            android:background="#E91E63"
-            android:paddingLeft="27dp"
-            android:paddingRight="27dp"
+            android:background="@color/capWay_gray"
+            android:paddingLeft="@dimen/account_activity_horz_margin"
+            android:paddingRight="@dimen/account_activity_horz_margin"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -191,12 +191,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="263dp"
+            android:layout_marginStart="@dimen/account_activity_horz_margin"
+            android:layout_marginTop="258dp"
             android:alpha="0.9"
             android:text="CapWay Card"
             android:textColor="@color/capWay_black"
-            android:textSize="19sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -204,20 +204,21 @@
 
         <ImageView
             android:id="@+id/image_credit_card"
-            android:layout_width="179dp"
-            android:layout_height="129dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="285dp"
+            android:layout_width="150dp"
+            android:layout_height="108dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="278dp"
             android:alpha="0.9"
             android:src="@drawable/img_debit_card"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="9dp"
-            android:layout_marginTop="27dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="@dimen/account_activity_horz_margin"
             app:layout_constraintStart_toEndOf="@id/image_credit_card"
             app:layout_constraintTop_toTopOf="@id/image_credit_card"
             android:alpha="0.9"
@@ -229,7 +230,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="9dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="57dp"
             app:layout_constraintStart_toEndOf="@id/image_credit_card"
             app:layout_constraintTop_toTopOf="@id/image_credit_card"
@@ -243,7 +244,7 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="424dp"
+            android:layout_marginTop="383dp"
             app:layout_anchor="@+id/constraintLayout2"
             app:layout_anchorGravity="center"
             app:layout_constraintTop_toTopOf="parent" />
@@ -253,7 +254,17 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/navigation"
             app:layout_constraintTop_toBottomOf="@id/tabs" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/bottom_nav"
+        />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

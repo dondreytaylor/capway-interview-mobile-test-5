@@ -6,7 +6,9 @@ import android.view.View
 import com.google.android.material.tabs.TabLayout
 import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
+import app.capway.designchallenge.R
 import app.capway.designchallenge.databinding.ActivityMainBinding
+import app.capway.designchallenge.model.Transaction
 import app.capway.designchallenge.view.account.SectionsPagerAdapter
 
 class MainActivity : AppCompatActivity() {
@@ -31,4 +33,10 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, BlankActivity::class.java)
         startActivity(intent)
     }
+
+    /*
+    fun getDeposits(): List<Transaction> {
+
+    }
+    */
 }

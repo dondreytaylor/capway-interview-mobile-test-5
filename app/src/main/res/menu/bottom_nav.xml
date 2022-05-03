@@ -21,4 +21,9 @@
         android:icon="@drawable/ic_phunds"
         android:title="Phunds"
         tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/action_more"
+        android:icon="@drawable/ic_more"
+        android:title="More"
+        tools:ignore="HardcodedText" />
 </menu>

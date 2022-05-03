@@ -1,10 +1,12 @@
 package app.capway.designchallenge.view
 
 import android.os.Bundle
+import android.os.Parcel
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import app.capway.designchallenge.R
+
 
 /**
  * Placeholder activity displaying a blank screen.
@@ -19,6 +21,10 @@ class BlankActivity : AppCompatActivity() {
 
         // Showing the back button in action bar
         actionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    fun writeToParcel(dest: Parcel, flags: Int) {
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

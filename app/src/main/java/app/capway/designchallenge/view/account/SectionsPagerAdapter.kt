@@ -21,12 +21,12 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
     FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
-        val af = AccountListFragment.newInstance(getTransactions())
+
         return when (position) {
-            0 -> AccountListFragment.newInstance(getTransactions())
-            1 -> AccountListFragment.newInstance(getDeposits())
-            2 -> AccountListFragment.newInstance(getWithdrawals())
-            else -> AccountListFragment.newInstance(getTransactions())
+            0 -> AccountListFragment(getTransactions())
+            1 -> AccountListFragment(getDeposits())
+            2 -> AccountListFragment(getWithdrawals())
+            else -> AccountListFragment(getTransactions())
         }
     }
 

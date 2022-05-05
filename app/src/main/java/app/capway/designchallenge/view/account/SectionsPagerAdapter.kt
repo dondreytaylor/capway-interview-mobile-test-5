@@ -7,6 +7,9 @@ import androidx.fragment.app.FragmentPagerAdapter
 import app.capway.designchallenge.R
 import app.capway.designchallenge.model.Transaction
 
+/**
+ * Array of tab titles from automatic processing.
+ */
 private val TAB_TITLES = arrayOf(
     R.string.tab_text_1,
     R.string.tab_text_2,
@@ -15,13 +18,18 @@ private val TAB_TITLES = arrayOf(
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
- * one of the sections/tabs/pages.
+ * one of the sections/tabs/pages.  The loaded fragment contains example
+ * test data to show off list with simulated values.
  */
 class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
     FragmentPagerAdapter(fm) {
 
+    /**
+     * Returns Fragment for the matching position and tab title.
+     */
     override fun getItem(position: Int): Fragment {
-
+        // When clause that returns the AccountListFragment filled
+        // with appropriate data into the Fragment object.
         return when (position) {
             0 -> AccountListFragment(getTransactions())
             1 -> AccountListFragment(getDeposits())
@@ -30,15 +38,23 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
         }
     }
 
+    /**
+     * Callback to get title from the array of tab titles.
+     */
     override fun getPageTitle(position: Int): CharSequence {
         return context.resources.getString(TAB_TITLES[position])
     }
 
+    /**
+     * Callback for count of tabs.
+     */
     override fun getCount(): Int {
-        // Show 2 total pages.
         return 3
     }
 
+    /**
+     * Returns a list of test withdrawal transactions.
+     */
     private fun getWithdrawals(): ArrayList<Transaction> {
         val resultReturn: ArrayList<Transaction> = arrayListOf()
         resultReturn.add(
@@ -54,6 +70,9 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
         return resultReturn
     }
 
+    /**
+     * Returns a list of test deposit transactions.
+     */
     private fun getDeposits() : ArrayList<Transaction> {
         val resultReturn: ArrayList<Transaction> = arrayListOf()
         resultReturn.add(
@@ -67,6 +86,9 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
         return resultReturn
     }
 
+    /**
+     * Returns list of all test transactions -- a larger list.
+     */
     private fun getTransactions(): ArrayList<Transaction>  {
         val resultReturn: ArrayList<Transaction> = arrayListOf()
 

@@ -6,15 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import app.capway.designchallenge.R
 import app.capway.designchallenge.model.Transaction
 
+/**
+ * Recycler view adapter that binds data from an ArrayList of transaction model
+ * objects to list items with display.  Implements by default the Holder pattern
+ * for lists where the layout is inflated with the various View fields are mapped
+ * in the ViewHolder class.
+ */
 class AccountListAdapter(val context: Context?, val dataList: ArrayList<Transaction>)
     : RecyclerView.Adapter<AccountListAdapter.ViewHolder>() {
 
+    /**
+     * ViewHolder class that get recycled in this List scheme.
+     */
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imageViewMoney: ImageView = itemView.findViewById<View>(R.id.image_view_money) as ImageView
         var imageViewBank: ImageView = itemView.findViewById<View>(R.id.image_view_bank) as ImageView
@@ -50,14 +58,19 @@ class AccountListAdapter(val context: Context?, val dataList: ArrayList<Transact
      */
     @SuppressLint("SetTextI18n", "UseCompatLoadingForDrawables")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        // A list data item for data extraction
         val listData: Transaction = dataList[position]
 
+        // Set holder fields with data using basic and conditional logic
         val drawable = holder.imageViewBank.resources.getDrawable(listData.itemImageId)
         holder.imageViewMoney.setImageDrawable(drawable)
         holder.imageViewBank.setImageDrawable(drawable)
         holder.nameTextView.text = listData.name
         holder.timestampTextView.text = listData.timestamp
         holder.amountTextView.text = listData.amount
+
+        // Conditionally sets icon and text color based on
+        // whether a data item is a deposit or not
         if (listData.isDeposit) {
             holder.imageViewMoney.visibility = View.GONE
             holder.imageViewBank.visibility = View.VISIBLE
@@ -72,6 +85,7 @@ class AccountListAdapter(val context: Context?, val dataList: ArrayList<Transact
             holder.amountTextView.setTextColor(color)
         }
 
+        // Displays special text for pending transactions
         if (listData.isPending) {
             holder.pendingTextView.visibility = View.VISIBLE
         } else {

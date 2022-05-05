@@ -13,7 +13,7 @@
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_marginStart="27dp"
         tools:ignore="HardcodedText"
         />

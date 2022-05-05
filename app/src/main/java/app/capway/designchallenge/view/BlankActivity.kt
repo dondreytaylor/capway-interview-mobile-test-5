@@ -9,7 +9,7 @@ import app.capway.designchallenge.R
 
 
 /**
- * Placeholder activity displaying a blank screen.
+ * Placeholder activity displaying a test screen.
  */
 class BlankActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,10 +23,9 @@ class BlankActivity : AppCompatActivity() {
         actionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    fun writeToParcel(dest: Parcel, flags: Int) {
-
-    }
-
+    /**
+     * Provides a function for the home arrow being selected.
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.getItemId()) {
             android.R.id.home -> {
